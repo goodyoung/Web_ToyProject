@@ -1,0 +1,2 @@
+source ./toyproject/bin/activate
+cd voteproject
