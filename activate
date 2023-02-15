@@ -1,2 +1,3 @@
-source ./toyproject/bin/activate
-cd voteproject
+cd ..
+source ./드장고2/toyproject/bin/activate
+cd ../Desktop/Web_ToyProject/voteproject
