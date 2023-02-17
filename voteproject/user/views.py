@@ -1,12 +1,13 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-# from .models import 
+from main.models import UserInfo, Proposal, Registration_title, Registration_article
 
 def signUp(request):
-    return HttpResponse("안녕하세요 signUp에 오신것을 환영합니다.")
+    return render(request,'user/signUp.html')
 
 def logIn(request):
-    return HttpResponse("안녕하세요 logIn에 오신것을 환영합니다.")
+    return render(request,'user/logIn.html')
 
 def logOut(request):
-    return HttpResponse("안녕하세요 logOut에 오신것을 환영합니다.")
+    return render(request,'user/logOut.html')
+
