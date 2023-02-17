@@ -4,3 +4,4 @@ from main.models import Registration_title
 def vote(request):
     print(Registration_title.objects.all())
     return render(request, 'vote/vote_select.html')
+# 안녕하세요 바꿀게용
