@@ -1,13 +1,22 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from main.models import UserInfo, Proposal, Registration_title, Registration_article
 
+from django.contrib.auth import authenticate, login
+from user.form import UserForm
+
 def signUp(request):
-    return render(request,'user/signUp.html')
-
-def logIn(request):
-    return render(request,'user/logIn.html')
-
-def logOut(request):
-    return render(request,'user/logOut.html')
+    if request.method == "POST":
+        form = UserForm(request.POST)
+        # if form.is_valid():
+        #     form.save()
+        #     username = form.cleaned_data.get('username')
+        #     raw_password = form.cleaned_data.get('password1')
+        #     user = authenticate(username=username, password=raw_password)  # 사용자 인증
+        #     login(request, user)  # 로그인
+        #     return redirect('index')
+        render(request, 'main/main.html')
+    else:
+        form = UserForm()
+    return render(request, 'main/main.html', {'form': form})
 
