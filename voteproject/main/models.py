@@ -1,6 +1,6 @@
 from django.db import models
 class UserInfo(models.Model):
-    id = models.CharField(max_length=30, primary_key=True, blank=False)  # unique 는 안했다
+    id = models.CharField(max_length=30, primary_key=True, blank=False, unique=True)  # unique 는 안했다
     name = models.CharField(max_length=30, blank=False, null = False)
     password = models.CharField(max_length=200, blank=False, null = False)
     telephone = models.CharField(max_length=200, blank=False, null = False)
