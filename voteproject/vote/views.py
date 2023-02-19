@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from main.models import Registration_title, Registration_article
-from .form import TitleForm, ArticleForm
+from main.views import main
 
 def vote(request):
     if request.method == 'POST':
@@ -19,7 +19,7 @@ def voting(request, titled_id):
         voting_result = request.POST['votings']
         print('voting결과: ', voting_result)
         ## voting결과까진 뽑혔다.. 이제 count추가
-        return render(request, 'main/main.html')  #redirect로 변경 가능?
+        return redirect(main) # main 페이지로 이동
     #titled_id에 맞는 article만 가져온다.
     articles = Registration_article.objects.filter(registration_id = titled_id).values_list('article',
                                                                                             flat = True)
