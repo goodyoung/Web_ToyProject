@@ -1,11 +1,12 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from main.models import UserInfo
 
-
-class UserForm(UserCreationForm):
-    email = forms.EmailField(label="email")
-
+class UserInfoForm(forms.ModelForm): # UserCreationForm
     class Meta:
-        model = User
-        fields = ("username", "password1", "password2", "email")
+        model = UserInfo
+        fields = '__all__'
+
+        
+# email = forms.EmailField(label="email")
