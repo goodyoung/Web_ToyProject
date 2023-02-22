@@ -37,12 +37,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     # apps
     "main.apps.MainConfig",
     # "user.apps.UserConfig",
     # "pro.apps.ProConfig",
     # "vote.apps.VoteConfig",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
